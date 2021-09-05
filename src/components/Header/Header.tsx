@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">My Contacts App!</Navbar.Brand>
+        <Navbar.Brand href="#home">👥 Contacts</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
