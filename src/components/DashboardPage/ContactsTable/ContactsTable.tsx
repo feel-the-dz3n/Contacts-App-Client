@@ -39,7 +39,7 @@ export default function ContactsTable() {
   };
 
   return (
-    <Container>
+    <Container fluid>
       {buildHeader()}
       {contacts.map((contact) => (
         <ContactItem contact={contact} />
