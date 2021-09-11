@@ -1,0 +1,20 @@
+.Name {
+    width: 100%;
+    font-weight: 500;
+}
+
+.Id {
+    opacity: 0.35;
+}
+
+.ContactsTable-Cell {
+    padding: 16px;
+}
+
+.ContactsTable-Row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.ContactsTable-Row:last-child {
+    border-bottom: none;
+}

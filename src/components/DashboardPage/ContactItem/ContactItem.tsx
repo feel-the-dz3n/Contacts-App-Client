@@ -53,13 +53,13 @@ export default function ContactItem(props: props) {
     return `${day}/${month}/${year} (${age} y/o)`;
   };
   return (
-    <tr>
-      <td className="Id">{contact.id}</td>
-      <td className="Name">{getNameText()}</td>
-      <td className="Nickname">{contact.nickname || ""}</td>
-      <td className="Work-Phone">{contact.workPhone || ""}</td>
-      <td className="Mobile-Phone">{contact.mobilePhone || ""}</td>
-      <td className="Age">{getAgeText()}</td>
+    <tr className="ContactsTable-Row">
+      <td className="ContactsTable-Cell Id">#{contact.id}</td>
+      <td className="ContactsTable-Cell Name">{getNameText()}</td>
+      <td className="ContactsTable-Cell Nickname">{contact.nickname || ""}</td>
+      <td className="ContactsTable-Cell Work-Phone">{contact.workPhone || ""}</td>
+      <td className="ContactsTable-Cell Mobile-Phone">{contact.mobilePhone || ""}</td>
+      <td className="ContactsTable-Cell Age">{getAgeText()}</td>
       <td>
         <EditContactButton contact={contact} />
       </td>

@@ -25,7 +25,7 @@ export default function ContactsTable() {
   ];
 
   return (
-    <table style={{ width: "100%" }}>
+    <table style={{ width: "100%" }} className="ContactsTable">
       {contacts.map((contact) => (
         <ContactItem contact={contact} />
       ))}
