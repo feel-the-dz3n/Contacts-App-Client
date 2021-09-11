@@ -3,18 +3,27 @@
     font-weight: 500;
 }
 
+.Nickname {
+    font-weight: 200;
+    opacity: .75;
+}
+
 .Id {
     opacity: 0.35;
 }
 
-.ContactsTable-Cell {
-    padding: 16px;
+.ContactsTable tr td {
+    padding: 16px 16px;
 }
 
-.ContactsTable-Row {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+.ContactsTable tr {
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
 }
 
-.ContactsTable-Row:last-child {
+.ContactsTable tr:last-child {
     border-bottom: none;
+}
+
+.ContactsTable tr:hover {
+    background-color: rgba(68, 140, 255, 0.041);
 }

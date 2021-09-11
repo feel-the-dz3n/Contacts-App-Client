@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import ContactModel from "../../../models/contact";
 import ContactItem from "../ContactItem/ContactItem";
+import "./ContactsTable.css";
 
 export default function ContactsTable() {
   const contacts: ContactModel[] = [
@@ -9,7 +10,7 @@ export default function ContactsTable() {
       firstName: "SashaKot0v",
       lastName: undefined,
       workPhone: "+380961122345",
-      mobilePhone: undefined,
+      mobilePhone: "+380961122345",
       birthday: new Date("12-02-2008"),
       nickname: "unclclerik",
     },
@@ -25,10 +26,12 @@ export default function ContactsTable() {
   ];
 
   return (
-    <table style={{ width: "100%" }} className="ContactsTable">
-      {contacts.map((contact) => (
-        <ContactItem contact={contact} />
-      ))}
-    </table>
+    <div className="ContactsTableContainer">
+      <table style={{ width: "100%" }} className="ContactsTable">
+        {contacts.map((contact) => (
+          <ContactItem contact={contact} />
+        ))}
+      </table>
+    </div>
   );
 }
