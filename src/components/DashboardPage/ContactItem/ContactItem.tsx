@@ -1,9 +1,11 @@
 import { Col, Row } from "react-bootstrap";
 import ContactModel from "../../../models/contact";
+import "./ContactItem.css";
 
 interface props {
   contact: ContactModel;
 }
+
 
 export default function ContactItem(props: props) {
   const { contact } = props;
