@@ -1,0 +1,14 @@
+.Content-Container {
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+}
+
+.Content {
+    max-width: 1200px;
+    flex: 1;
+}
+
+td {
+    white-space: nowrap;
+}

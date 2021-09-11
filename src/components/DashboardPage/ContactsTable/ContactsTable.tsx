@@ -6,11 +6,11 @@ export default function ContactsTable() {
   const contacts: ContactModel[] = [
     {
       id: 0,
-      firstName: "SashaKotov",
+      firstName: "SashaKot0v",
       lastName: undefined,
       workPhone: "+380961122345",
       mobilePhone: undefined,
-      birthday: new Date("01-01-2008"),
+      birthday: new Date("12-02-2008"),
       nickname: "unclclerik",
     },
     {
@@ -19,31 +19,16 @@ export default function ContactsTable() {
       lastName: "Kibysh",
       workPhone: undefined,
       mobilePhone: undefined,
-      birthday: new Date("15-01-2002"),
+      birthday: new Date("01-15-2002"),
       nickname: "dz3n",
     },
   ];
 
-  const buildHeader = () => {
-    return (
-      <Row>
-        <Col>ID</Col>
-        <Col>First Name</Col>
-        <Col>Last Name</Col>
-        <Col>Nickname</Col>
-        <Col>Work Phone</Col>
-        <Col>Mobile Phone</Col>
-        <Col>Birthday</Col>
-      </Row>
-    );
-  };
-
   return (
-    <Container fluid>
-      {buildHeader()}
+    <table style={{ width: "100%" }}>
       {contacts.map((contact) => (
         <ContactItem contact={contact} />
       ))}
-    </Container>
+    </table>
   );
 }
