@@ -37,6 +37,13 @@ export default function ContactsTable() {
     );
   };
 
+  const onContactRemoved = async (contact: ContactModel) => {
+    const contactsCopy = [...contacts];
+    const index = contactsCopy.map((c) => c.id).indexOf(contact.id);
+    contactsCopy.splice(index, 1);
+    setContacts(contactsCopy);
+  };
+
   useEffect(() => {
     fetchContacts();
   }, []);
@@ -80,7 +87,11 @@ export default function ContactsTable() {
           <tbody>
             {buildHeader()}
             {contacts.map((contact) => (
-              <ContactItem key={contact.id} contact={contact} />
+              <ContactItem
+                key={contact.id}
+                contact={contact}
+                onRemoved={(contact) => onContactRemoved(contact)}
+              />
             ))}
           </tbody>
         </table>

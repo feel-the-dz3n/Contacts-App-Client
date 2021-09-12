@@ -13,7 +13,7 @@ export default function EditContactButton(props: props) {
   //        so the spacing is made by this component with margin
   return (
     <Button variant="outline-primary" size="sm" style={{ marginRight: 8 }}>
-      ✏️
+      Edit
     </Button>
   ); // TODO: this is going to open a dialog
 }

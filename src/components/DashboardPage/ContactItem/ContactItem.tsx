@@ -1,13 +1,19 @@
+import { useState } from "react";
 import ContactModel from "../../../models/contact";
+import contactsApi from "../../../services/contacts-api";
 import DeleteContactButton from "../DeleteContactButton/DeleteContactButton";
 import EditContactButton from "../EditContactButton/EditContactButton";
 import "./ContactItem.css";
 
+type ContactDeletedDelegate = (contact: ContactModel) => void;
+
 interface props {
   contact: ContactModel;
+  onRemoved?: ContactDeletedDelegate;
 }
 
 export default function ContactItem(props: props) {
+  const [collapsed, setCollapsed] = useState(false);
   const { contact } = props;
 
   const getNameText = (): string => {
@@ -64,8 +70,22 @@ export default function ContactItem(props: props) {
 
     return `${day}/${month}/${year} (${age} y/o)`;
   };
+
+  const deleteClicked = async () => {
+    setCollapsed(true);
+
+    const removedContact = await contactsApi.removeContact(props.contact.id);
+
+    // Let's wait 500 ms anyway just to ensure that animation was completed
+    setTimeout(() => {
+      if (props.onRemoved) {
+        props.onRemoved(props.contact);
+      }
+    }, 500);
+  };
+
   return (
-    <tr>
+    <tr className={collapsed ? "collapsed" : ""}>
       <td className="Id">#{contact.id}</td>
       <td className="Name">{getNameComponent()}</td>
       <td className="Work-Phone">{contact.workPhone || "---"}</td>
@@ -73,7 +93,7 @@ export default function ContactItem(props: props) {
       <td className="Age">{getAgeText()}</td>
       <td>
         <EditContactButton contact={contact} />
-        <DeleteContactButton contact={contact} />
+        <DeleteContactButton onClick={() => deleteClicked()} />
       </td>
     </tr>
   );
