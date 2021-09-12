@@ -11,6 +11,7 @@ function App() {
       <div className="Content-Container">
         <Card className="Content">
           <Card.Body>
+            <h4 className="PageTitle">Your contacts</h4>
             <DashboardPage />
           </Card.Body>
         </Card>
