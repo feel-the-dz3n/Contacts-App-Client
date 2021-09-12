@@ -10,3 +10,10 @@
 .ContactsTable th:last-child {
     border-bottom: none;
 }
+
+.no-contacts-container {
+    display: flex;
+    align-items: center;
+    margin-top: 64px;
+    flex-direction: column;
+}
