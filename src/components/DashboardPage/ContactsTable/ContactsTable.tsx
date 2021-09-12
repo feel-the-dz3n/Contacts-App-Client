@@ -24,9 +24,11 @@ export default function ContactsTable() {
   return (
     <div className="ContactsTableContainer">
       <table style={{ width: "100%" }} className="ContactsTable">
-        {contacts.map((contact) => (
-          <ContactItem contact={contact} />
-        ))}
+        <tbody>
+          {contacts.map((contact) => (
+            <ContactItem key={contact.id} contact={contact} />
+          ))}
+        </tbody>
       </table>
     </div>
   );
