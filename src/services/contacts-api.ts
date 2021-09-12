@@ -8,6 +8,11 @@ class ContactsAPI {
     const response = await fetch(apiUrl);
     return await response.json();
   }
+
+  async removeContact(id: number): Promise<ContactModel> {
+    const response = await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+    return await response.json();
+  }
 }
 
 export default new ContactsAPI();
