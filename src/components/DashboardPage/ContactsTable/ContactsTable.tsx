@@ -31,7 +31,7 @@ export default function ContactsTable() {
         <th>Name</th>
         <th>Work Phone</th>
         <th>Mobile Phone</th>
-        <th>Age</th>
+        <th>Birthday</th>
         <th></th>
       </tr>
     );
