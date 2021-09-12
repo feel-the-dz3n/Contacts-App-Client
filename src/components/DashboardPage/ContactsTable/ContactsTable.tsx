@@ -9,14 +9,19 @@ import "./ContactsTable.css";
 export default function ContactsTable() {
   const [contacts, setContacts] = useState<ContactModel[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<any>();
 
   const fetchContacts = async () => {
     setIsLoading(true);
 
-    const contacts = await contactsApi.getContacts();
-    setContacts(contacts);
-
-    setIsLoading(false);
+    try {
+      const contacts = await contactsApi.getContacts();
+      setContacts(contacts);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const buildHeader = (): JSX.Element => {
@@ -36,6 +41,16 @@ export default function ContactsTable() {
     fetchContacts();
   }, []);
 
+  if (error) {
+    return (
+      <div className="no-contacts-container">
+        <h5>😟 Something went wrong. Please, try again later.</h5>
+        <span>Error message:</span>
+        <code>{error.message}</code>
+      </div>
+    );
+  }
+
   if (isLoading) {
     return (
       <div style={{ display: "flex", justifyContent: "center" }}>
@@ -46,7 +61,7 @@ export default function ContactsTable() {
     );
   }
 
-  if (contacts.length == 0) {
+  if (contacts.length === 0) {
     return (
       <div className="no-contacts-container">
         <h5>😟 There are no contacts yet.</h5>
