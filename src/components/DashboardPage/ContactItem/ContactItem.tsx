@@ -1,5 +1,3 @@
-import { Card } from "react-bootstrap";
-import { transform } from "typescript";
 import ContactModel from "../../../models/contact";
 import DeleteContactButton from "../DeleteContactButton/DeleteContactButton";
 import EditContactButton from "../EditContactButton/EditContactButton";

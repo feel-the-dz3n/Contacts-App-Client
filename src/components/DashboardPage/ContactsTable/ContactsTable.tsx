@@ -1,4 +1,3 @@
-import { Col, Container, Row } from "react-bootstrap";
 import ContactModel from "../../../models/contact";
 import ContactItem from "../ContactItem/ContactItem";
 import "./ContactsTable.css";
