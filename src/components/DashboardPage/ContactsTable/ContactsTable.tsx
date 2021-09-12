@@ -56,15 +56,20 @@ export default function ContactsTable() {
   }
 
   return (
-    <div className="ContactsTableContainer">
-      <table style={{ width: "100%" }} className="ContactsTable">
-        <tbody>
-          {buildHeader()}
-          {contacts.map((contact) => (
-            <ContactItem key={contact.id} contact={contact} />
-          ))}
-        </tbody>
-      </table>
+    <div>
+      <div className="contacts-table-toolbar">
+        <AddContactButton />
+      </div>
+      <div className="ContactsTableContainer">
+        <table style={{ width: "100%" }} className="ContactsTable">
+          <tbody>
+            {buildHeader()}
+            {contacts.map((contact) => (
+              <ContactItem key={contact.id} contact={contact} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

@@ -17,3 +17,9 @@
     margin-top: 64px;
     flex-direction: column;
 }
+
+.contacts-table-toolbar {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: right;
+}
