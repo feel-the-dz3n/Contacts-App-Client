@@ -22,6 +22,42 @@ export default function ContactsTable() {
       birthday: new Date("01-15-2002"),
       nickname: "dz3n",
     },
+    {
+      id: 3,
+      firstName: "Jonathan",
+      lastName: undefined,
+      workPhone: undefined,
+      mobilePhone: undefined,
+      birthday: undefined,
+      nickname: undefined,
+    },
+    {
+      id: 4,
+      firstName: "Alexie",
+      lastName: "Pierce",
+      workPhone: undefined,
+      mobilePhone: undefined,
+      birthday: undefined,
+      nickname: undefined,
+    },
+    {
+      id: 5,
+      firstName: "Trevor з роботи",
+      lastName: undefined,
+      workPhone: undefined,
+      mobilePhone: undefined,
+      birthday: undefined,
+      nickname: undefined,
+    },
+    {
+      id: 6,
+      firstName: "Trevor 2",
+      lastName: undefined,
+      workPhone: undefined,
+      mobilePhone: undefined,
+      birthday: undefined,
+      nickname: undefined,
+    },
   ];
 
   return (
