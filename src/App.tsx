@@ -9,12 +9,10 @@ function App() {
     <div className="App">
       <Header />
       <div className="Content-Container">
-        <Card className="Content">
-          <Card.Body>
-            <h4 className="PageTitle">Your contacts</h4>
-            <DashboardPage />
-          </Card.Body>
-        </Card>
+        <div className="Content">
+          <h4 className="PageTitle">Your contacts</h4>
+          <DashboardPage />
+        </div>
       </div>
     </div>
   );
