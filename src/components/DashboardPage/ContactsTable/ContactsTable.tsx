@@ -7,10 +7,15 @@ import "./ContactsTable.css";
 
 export default function ContactsTable() {
   const [contacts, setContacts] = useState<ContactModel[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchContacts = async () => {
+    setIsLoading(true);
+
     const contacts = await contactsApi.getContacts();
     setContacts(contacts);
+
+    setIsLoading(false);
   };
 
   useEffect(() => {
