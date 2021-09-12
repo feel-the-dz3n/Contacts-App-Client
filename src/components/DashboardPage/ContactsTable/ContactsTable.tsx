@@ -7,7 +7,7 @@ export default function ContactsTable() {
     {
       id: 0,
       firstName: "SashaKot0v",
-      lastName: undefined,
+      lastName: null,
       workPhone: "+380961122345",
       mobilePhone: "+380961122345",
       birthday: new Date("12-02-2008"),
@@ -17,55 +17,57 @@ export default function ContactsTable() {
       id: 1,
       firstName: "Yaroslav",
       lastName: "Kibysh",
-      workPhone: undefined,
-      mobilePhone: undefined,
+      workPhone: null,
+      mobilePhone: null,
       birthday: new Date("01-15-2002"),
       nickname: "dz3n",
     },
     {
       id: 3,
       firstName: "Jonathan",
-      lastName: undefined,
-      workPhone: undefined,
-      mobilePhone: undefined,
-      birthday: undefined,
-      nickname: undefined,
+      lastName: null,
+      workPhone: null,
+      mobilePhone: null,
+      birthday: null,
+      nickname: null,
     },
     {
       id: 4,
       firstName: "Alexie",
       lastName: "Pierce",
-      workPhone: undefined,
-      mobilePhone: undefined,
-      birthday: undefined,
-      nickname: undefined,
+      workPhone: null,
+      mobilePhone: null,
+      birthday: null,
+      nickname: null,
     },
     {
       id: 5,
       firstName: "Trevor з роботи",
-      lastName: undefined,
-      workPhone: undefined,
-      mobilePhone: undefined,
-      birthday: undefined,
-      nickname: undefined,
+      lastName: null,
+      workPhone: null,
+      mobilePhone: null,
+      birthday: null,
+      nickname: null,
     },
     {
       id: 6,
       firstName: "Trevor 2",
-      lastName: undefined,
-      workPhone: undefined,
-      mobilePhone: undefined,
-      birthday: undefined,
-      nickname: undefined,
+      lastName: null,
+      workPhone: null,
+      mobilePhone: null,
+      birthday: null,
+      nickname: null,
     },
   ];
 
   return (
     <div className="ContactsTableContainer">
       <table style={{ width: "100%" }} className="ContactsTable">
-        {contacts.map((contact) => (
-          <ContactItem contact={contact} />
-        ))}
+        <tbody>
+          {contacts.map((contact) => (
+            <ContactItem key={contact.id} contact={contact} />
+          ))}
+        </tbody>
       </table>
     </div>
   );
