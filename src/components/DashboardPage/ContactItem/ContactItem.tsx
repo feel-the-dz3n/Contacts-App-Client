@@ -37,13 +37,12 @@ export default function ContactItem(props: props) {
       return null;
     }
 
+    const birthday = new Date(contact.birthday);
+
     let today = new Date();
-    let age = today.getFullYear() - contact.birthday.getFullYear();
-    let month = today.getMonth() - contact.birthday.getMonth();
-    if (
-      month < 0 ||
-      (month === 0 && today.getDate() < contact.birthday.getDate())
-    ) {
+    let age = today.getFullYear() - birthday.getFullYear();
+    let month = today.getMonth() - birthday.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birthday.getDate())) {
       age--;
     }
 
@@ -57,9 +56,11 @@ export default function ContactItem(props: props) {
       return "";
     }
 
-    const day = contact.birthday.getDate();
-    const month = contact.birthday.getMonth() + 1;
-    const year = contact.birthday.getFullYear();
+    const birthday = new Date(contact.birthday);
+
+    const day = birthday.getDate();
+    const month = birthday.getMonth() + 1;
+    const year = birthday.getFullYear();
 
     return `${day}/${month}/${year} (${age} y/o)`;
   };
