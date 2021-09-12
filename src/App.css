@@ -12,3 +12,8 @@
 td {
     white-space: nowrap;
 }
+
+.PageTitle {
+    font-weight: 400;
+    margin-bottom: 16px;
+}
